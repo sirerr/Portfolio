@@ -32,7 +32,7 @@ function IndexPage() {
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <h1>Hello!</h1>
+      <h1>What Up!</h1>
       <h2>My name is Leonard.</h2>
       <h3>I am:</h3>
       <ul>
