@@ -1,46 +1,44 @@
 {
-  "name": "portfolio-gatsby",
+  "name": "leonard-portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Leonard's portfolio site",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Leonard Wedderburn",
   "dependencies": {
     "@mdx-js/mdx": "1.0.18",
     "@mdx-js/react": "1.0.16",
     "@mdx-js/tag": "0.20.3",
+    "@types/react": "^16.8.17",
+    "@types/react-helmet": "^5.0.8",
     "gatsby": "^2.3.31",
     "gatsby-image": "^2.0.40",
     "gatsby-mdx": "0.6.3",
     "gatsby-plugin-manifest": "^2.0.29",
-    "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "^2.0.35",
+    "gatsby-plugin-typescript": "^2.0.13",
     "gatsby-source-filesystem": "^2.0.32",
     "gatsby-transformer-sharp": "^2.1.18",
     "gatsby-transformer-yaml": "2.1.12",
-    "prop-types": "^15.7.2",
+    "prettier": "^1.17.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0"
   },
-  "devDependencies": {
-    "prettier": "^1.17.0"
-  },
   "keywords": [],
-  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx} --semi --trailing-comma es5",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/sirerr/Portfolio"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/sirerr/Portfolio/issues"
   }
 }

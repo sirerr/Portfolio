@@ -1,18 +1,11 @@
 const path = require("path")
 
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+exports.createPages = createProjectPages;
 
-exports.createPages = createPages
-
-async function createPages({ graphql, actions }) {
-  // Destructure the createPage function from the actions object
-  const { createPage } = actions
+async function createProjectPages({ graphql, actions }) {
+  const projectComponent = path.resolve(`src/components/project.jsx`)
   const result = await graphql(`
-    {
+    query {
       allMdx {
         edges {
           node {
@@ -24,21 +17,19 @@ async function createPages({ graphql, actions }) {
         }
       }
     }
-  `)
-  // this is some boilerlate to handle errors
+  `);
   if (result.errors) {
-    console.error(result.errors)
-    throw result.errors
+    console.error('Error fetching data for project pages');
+    throw result.errors;
   }
-  // We'll call `createPage` for each result
-  result.data.allMdx.edges.forEach(({ node }) => {
-    createPage({
+  for ( const { node } of result.data.allMdx.edges ) {
+    actions.createPage({
       path: node.frontmatter.path,
-      // This component will wrap our MDX content
-      component: path.resolve(`./src/components/project.js`),
-      // We can use the values in this context in
-      // our page layout component
-      context: { id: node.id },
-    })
-  })
+      id: node.id,
+      component: projectComponent,
+      context: {
+        id: node.id,
+      }
+    });
+  }
 }
