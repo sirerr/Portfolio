@@ -1,6 +1,6 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-mdx";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 import SEO from "./seo";
 
 function Project(props) {
