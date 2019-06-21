@@ -1,8 +1,7 @@
-import React from "react";
+import React from "react"
 
-function Image (props)
-{
-	return <img src = props.src />
+function Image(props) {
+  return <img src={props.src} />
 }
 
-export default Image;
+export default Image
