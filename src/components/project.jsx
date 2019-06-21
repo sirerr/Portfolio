@@ -17,8 +17,8 @@ function Project(props) {
 }
 
 export const query = graphql`
-  query ProjectQuery($id: String) {
-    mdx(id: { eq: $id }) {
+  query ProjectQuery($path: String) {
+     mdx(frontmatter: {path: {eq: $path}}){
       frontmatter {
         title
       }

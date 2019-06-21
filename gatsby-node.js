@@ -7,14 +7,13 @@ async function createProjectPages({ graphql, actions }) {
   const result = await graphql(`
     query {
       allMdx {
-        edges {
-          node {
-            id
+       
+          nodes {
             frontmatter {
               path
             }
           }
-        }
+        
       }
     }
   `);
@@ -22,14 +21,11 @@ async function createProjectPages({ graphql, actions }) {
     console.error('Error fetching data for project pages');
     throw result.errors;
   }
-  for ( const { node } of result.data.allMdx.edges ) {
+  for ( const  node  of result.data.allMdx.nodes ) {
     actions.createPage({
       path: node.frontmatter.path,
       id: node.id,
       component: projectComponent,
-      context: {
-        id: node.id,
-      }
     });
   }
 }
