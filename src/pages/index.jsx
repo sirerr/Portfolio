@@ -8,50 +8,47 @@ import "./index.css"
 function IndexPage() {
   const data = useStaticQuery(graphql`
     query {
-      thingsYaml {
-        things
-      }
       allMdx {
         edges {
           node {
             frontmatter {
               title
               path
+              image{
+                publicURL
+              }
             }
           }
         }
       }
     }
   `)
-  const things = data.thingsYaml.things
+ 
   const projects = data.allMdx.edges.map(edge => edge.node)
   return (
     <>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <h1>What Up!</h1>
-      <h2>My name is Leonard.</h2>
+ 
       <div>
-        <div className="nouns">
-          <h3>I am:</h3>
-          <ul>
-            {things.map(thing => {
-              return <li key={thing}>{thing}</li>
-            })}
-          </ul>
-        </div>
+        
+        
         <div className="links">
-          <h3>These are my projects</h3>
-          <ul>
+       
+     
             {projects.map(project => {
               return (
-                <li key={project.frontmatter.title}>
+                <div key={project.frontmatter.title}>
                   <Link to={project.frontmatter.path}>
-                    {project.frontmatter.title}
+                   <img src = {project.frontmatter.image.publicURL}>
+                   </img>
+                   <span>
+                   {project.frontmatter.title}
+                   </span>
                   </Link>
-                </li>
+                </div>
               )
             })}
-          </ul>
+        
         </div>
       </div>
     </>

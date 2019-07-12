@@ -1,0 +1,9 @@
+.image {
+    box-shadow: 0 3px 12px rgba(0,0,0,0.23), 0 3px 12px rgba(0,0,0,0.16);
+    transition: box-shadow 200ms;
+    margin-bottom: 30px;
+}
+
+.image:hover{
+    box-shadow:0 6px 12px rgba(0,0,0,0.23), 0 10px 40px rgba(0,0,0,0.19);
+}

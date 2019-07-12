@@ -2,10 +2,11 @@ import React from "react";
 import { MDXRenderer } from "gatsby-mdx";
 import { Link, graphql } from "gatsby";
 import SEO from "./seo";
+import './project.css';
 
 function Project(props) {
   return (
-    <div>
+    <div className="project">
       <SEO title={props.data.mdx.frontmatter.title} />
       <p>
         <Link to="/">Home</Link>
