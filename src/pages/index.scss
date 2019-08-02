@@ -8,8 +8,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  --font-family-header: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  --font-family-body: Helvetica, sans-serif;
+  --font-family-header: Helvetica, sans-serif;
+  --font-family-body: var(--font-family-header);
   font-family: var(--font-family-body);
 }
 
@@ -64,14 +64,35 @@ img{
 transform: translate(-50%,-50%) scale(1.1);
 }
 
-.intro{
-  
-}
+.intro {
+  // max-width: 800px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // position: absolute;
+  .content {
+    margin: 0 auto;
+    text-align: left;
+  }
+  &-row-1 {
+    display: flex;
+    flex-direction: row;
+    img{
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+      margin-right: 20px;
+    }
+  }
+  .tagline {
+    margin-top: 0px;
+    font-weight: 100;
+    color: #777;
+  }
+  h1 {
+    margin-bottom: 5px;
+  }
 
-.intro-row-1 {
-
-}
-
-.intro-row-1 img{
-  
 }
